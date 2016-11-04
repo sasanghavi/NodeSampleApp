@@ -36,9 +36,9 @@ Proxy server is running at port 4000 and delegates the request to one of the ava
 
 ### Setup
 
-* Clone this repo, run `npm install`.
-* Install redis and run on localhost:6379
-* Open two new terminal tabs and exceute ``` node main.js ``` and ``` node proxyServer.js```
+* Clone this repo, perform `npm install`.
+* Install redis and keep it running on localhost:6379
+* Exceute ``` node main.js ``` and ``` node proxyServer.js```
 
 
 ###Screencast###
