@@ -1,5 +1,6 @@
 #HomeWork 3 - Proxies, Queues, Cache#
-
+Shrey Sanghavi
+ssangha - Unity ID
 ###Tasks###
 ####1. set/get####
 
@@ -31,9 +32,17 @@ Upload the image through curl command and view it in the browser by visiting /me
 
 ####5. proxy####
 
-An HTTP proxy server was setup at port 80.
+Proxy server is running at port 3000 and delegates the request to one of the available servers spawned.
+
+### Setup
+
+* Clone this repo, run `npm install`.
+* Install redis and run on localhost:6379
+* Open two new terminal tabs and exceute ``` node main.js ``` and ``` node proxyServer.js```
 
 
 ###Screencast###
 
-[Link](https://youtu.be/)
+[Links]
+[Part 1](https://youtu.be/tRcweEq2E2c)
+[Part 2](https://youtu.be/)
