@@ -32,7 +32,7 @@ Upload the image through curl command and view it in the browser by visiting /me
 
 ####5. proxy####
 
-Proxy server is running at port 3000 and delegates the request to one of the available servers spawned.
+Proxy server is running at port 4000 and delegates the request to one of the available servers spawned.
 
 ### Setup
 
