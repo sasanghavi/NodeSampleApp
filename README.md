@@ -1,4 +1,4 @@
-#HomeWork 3 - Proxies, Queues, Cache Fluency#
+#HomeWork 3 - Proxies, Queues, Cache#
 
 ###Tasks###
 ####1. set/get####
