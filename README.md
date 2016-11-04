@@ -23,7 +23,9 @@ Upload the image through curl command and view it in the browser by visiting /me
 ####4. spawn/destroy/listservers####
 
 /spawn will create a new app server running on another port.
+
 /destroy, which will destroy a random server.
+
 /listservers shows a list of available servers.
 
 
