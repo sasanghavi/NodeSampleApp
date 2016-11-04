@@ -66,12 +66,13 @@ var args = process.argv.slice(2);
 if( args.length == 0 )
   {
     console.log("Using defual port number");
-    port = 3000;
+    defPort = 3000;
+		port = 3000;
   }
   else
     port = args[0];
 
-var server1 = app.listen(3000, function () {
+var server1 = app.listen(port, function () {
 
     var host1 = server1.address().address
     var port1 = server1.address().port
@@ -118,7 +119,7 @@ app.get('/spawn', function(req,res) {
 	console.log("Old port "+port);
 		client.llen('serverList', function(err, reply){
 			if (!err) {
-				port = 3000+reply+1
+				port = port+reply+1
 				console.log(port);
 			}
 		});
@@ -143,7 +144,7 @@ app.get('/destroy', function(req,res) {
       client.lrange('serverList',index,index,function(err, reply) {
         port = reply
         console.log('Stoping server on port : ' + port);
-        if(port == 3000)
+        if(port == defPort)
         {
           console.log('will not stop the default server');
           res.send('will not stop the default server');
