@@ -45,4 +45,4 @@ Proxy server is running at port 4000 and delegates the request to one of the ava
 
 [Links]
 [Part 1](https://youtu.be/tRcweEq2E2c)
-[Part 2](https://youtu.be/)
+[Part 2](https://youtu.be/RCbe04QkX7I)
