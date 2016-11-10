@@ -28,7 +28,9 @@ app.post('/upload',[ multer({ dest: './uploads/'}), function(req, res){
 
    if( req.files.image ){
     fs.readFile( req.files.image.path, function (err, data) {
-         if (err) throw err;
+         if (err) {
+		 throw err;
+	 }
          var img = new Buffer(data).toString('base64');
 
          // Store the image in a redis queue
@@ -67,9 +69,9 @@ if( args.length == 0 ){
     defPort = 3000;
 		port = 3000;
   }
-  else
+  else{
     port = args[0];
-
+  }
 var server1 = app.listen(port, function () {
 
     var host1 = server1.address().address
@@ -91,7 +93,7 @@ app.get('/set', function(req, res) {
 })
 
 app.get('/get', function(req, res) {
-    client.get("newKey", function(err,value){ if(value)res.send(value)
+    client.get("newKey", function(err,value){ if(value){res.send(value)}
 		else {
 			res.send("No Key Found.")
 		}});
@@ -107,8 +109,9 @@ app.get('/listservers', function(req,res){
           value = 'Recently added servers:\n';
           res.send(value + reply);
         }
-        else
+        else{
           res.send('No Servers foundin the list')
+	}
     });
 })
 
