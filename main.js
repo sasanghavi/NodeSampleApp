@@ -26,10 +26,11 @@ app.use(function(req, res, next)
 
 app.post('/upload',[ multer({ dest: './uploads/'}), function(req, res){
 
-   if( req.files.image )
-   {
+   if( req.files.image ){
     fs.readFile( req.files.image.path, function (err, data) {
-         if (err) throw err;
+         if (err) {
+		 throw err;
+	 }
          var img = new Buffer(data).toString('base64');
 
          // Store the image in a redis queue
@@ -63,15 +64,14 @@ app.get('/meow', function(req, res) {
 //HTTP SERVER
 var port;
 var args = process.argv.slice(2);
-if( args.length == 0 )
-  {
+if( args.length == 0 ){
     console.log("Using defual port number");
     defPort = 3000;
 		port = 3000;
   }
-  else
+  else{
     port = args[0];
-
+  }
 var server1 = app.listen(port, function () {
 
     var host1 = server1.address().address
@@ -93,15 +93,14 @@ app.get('/set', function(req, res) {
 })
 
 app.get('/get', function(req, res) {
-    client.get("newKey", function(err,value){ if(value)res.send(value)
+    client.get("newKey", function(err,value){ if(value) res.send(value)
 		else {
 			res.send("No Key Found.")
 		}});
 })
 app.get('/listservers', function(req,res){
   client.lrange('serverList', 0, -1, function(err, reply) {
-        if(reply)
-        {
+        if(reply){
 					client.llen('serverList', function(err, reply){
 						if (!err) {
 							console.log("LLEN "+reply);
@@ -110,8 +109,9 @@ app.get('/listservers', function(req,res){
           value = 'Recently added servers:\n';
           res.send(value + reply);
         }
-        else
+        else{
           res.send('No Servers foundin the list')
+	}
     });
 })
 
@@ -144,8 +144,7 @@ app.get('/destroy', function(req,res) {
       client.lrange('serverList',index,index,function(err, reply) {
         port = reply
         console.log('Stoping server on port : ' + port);
-        if(port == defPort)
-        {
+        if(port == defPort){
           console.log('will not stop the default server');
           res.send('will not stop the default server');
         }
