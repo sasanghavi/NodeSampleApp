@@ -4,7 +4,7 @@
   "description": "redis playground",
   "main": "main.js",
   "scripts": {
-    "test": "node test/testrunner.js"
+    "test": "./node_modules/.bin/jasmine-node spec/"
   },
   "author": "",
   "license": "ISC",
