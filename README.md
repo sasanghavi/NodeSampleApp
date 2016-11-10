@@ -1,7 +1,5 @@
-#HomeWork 3 - Proxies, Queues, Cache#
-Shrey Sanghavi - Name
+Proxies, Queues, Cache#
 
-ssangha - Unity ID
 ###Tasks###
 ####1. set/get####
 
