@@ -26,8 +26,7 @@ app.use(function(req, res, next)
 
 app.post('/upload',[ multer({ dest: './uploads/'}), function(req, res){
 
-   if( req.files.image )
-   {
+   if( req.files.image ){
     fs.readFile( req.files.image.path, function (err, data) {
          if (err) throw err;
          var img = new Buffer(data).toString('base64');
@@ -63,8 +62,7 @@ app.get('/meow', function(req, res) {
 //HTTP SERVER
 var port;
 var args = process.argv.slice(2);
-if( args.length == 0 )
-  {
+if( args.length == 0 ){
     console.log("Using defual port number");
     defPort = 3000;
 		port = 3000;
@@ -100,8 +98,7 @@ app.get('/get', function(req, res) {
 })
 app.get('/listservers', function(req,res){
   client.lrange('serverList', 0, -1, function(err, reply) {
-        if(reply)
-        {
+        if(reply){
 					client.llen('serverList', function(err, reply){
 						if (!err) {
 							console.log("LLEN "+reply);
@@ -144,8 +141,7 @@ app.get('/destroy', function(req,res) {
       client.lrange('serverList',index,index,function(err, reply) {
         port = reply
         console.log('Stoping server on port : ' + port);
-        if(port == defPort)
-        {
+        if(port == defPort){
           console.log('will not stop the default server');
           res.send('will not stop the default server');
         }
