@@ -4,7 +4,7 @@
   "description": "redis playground",
   "main": "main.js",
   "scripts": {
-    "test": "node test/testrunner.js"
+    "test": "jasmin-node test/testrunner.js"
   },
   "author": "",
   "license": "ISC",
