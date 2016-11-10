@@ -93,7 +93,7 @@ app.get('/set', function(req, res) {
 })
 
 app.get('/get', function(req, res) {
-    client.get("newKey", function(err,value){ if(value){res.send(value)}
+    client.get("newKey", function(err,value){ if(value) res.send(value)
 		else {
 			res.send("No Key Found.")
 		}});
