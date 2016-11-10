@@ -13,7 +13,7 @@ describe("basic server", function() {
 
     it("returns hello world", function(done) {
       request.get(base_url, function(error, response, body) {
-        expect(body).toBe("Hello world");
+        expect(body).toBe("hello world");
         done();
       });
     });
